@@ -29,7 +29,9 @@ section, summary, time, mark, audio, video {
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;}
+	display: block;
+	text-decoration: none;}
+	
 
 body {
 	line-height: 1;
@@ -41,6 +43,12 @@ ol, ul {
 
 
 
+html {
+	scroll-behavior: smooth;
+  
+  }
+
+  
 blockquote, q {
 	quotes: none;
 }
@@ -119,6 +127,15 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
+	.nav-item a:link {
+		background-color: rgb(41, 37, 40);
+	  }
+
+	 
+
+
+
+	  
 	body {
 		background:radial-gradient(#fff, #8a8a8a);
 	}
@@ -158,6 +175,7 @@ input, select, textarea {
 			border-bottom-color: transparent;
 			color: #49bf9d !important;
 			text-decoration: none;
+			list-style-type: none;
 		}
 
 	strong, b {
@@ -2200,7 +2218,7 @@ input, select, textarea {
 		}
 
 	ul {
-		list-style: disc;
+		list-style:none;
 		margin: 0 0 2em 0;
 		padding-left: 1em;
 	
@@ -2596,6 +2614,44 @@ input, select, textarea {
 			cursor: default;
 		}
 
+		#top {
+			display: inline-block;
+			background-color: #11ff00;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			border-radius: 4px;
+			position: fixed;
+			bottom: 30px;
+			right: 30px;
+			transition: background-color .3s, 
+			  opacity .5s, visibility .5s;
+			opacity: 0;
+			visibility: hidden;
+			z-index: 1000;
+		  }
+
+		  /* Top Button */
+		  #top::after {
+			content: "\f077";
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-style: normal;
+			font-size: 2em;
+			line-height: 50px;
+			color: #fff;
+		  }
+		  #top:hover {
+			cursor: pointer;
+			background-color: #333;
+		  }
+		  #top:active {
+			background-color: #555;
+		  }
+		  #top.show {
+			opacity: 1;
+			visibility: visible;
+		  }
 	
 	
 /* Work Item */
@@ -2682,6 +2738,7 @@ input, select, textarea {
 			color: rgba(255, 255, 255, 0.5);
 			font-size: 1.35em;
 			line-height: 1.75em;
+			word-wrap: none;
 			margin: 0;
 		}
 
